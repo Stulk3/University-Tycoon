@@ -15,7 +15,7 @@ C:/ProjectUniti/University-Tycoon/University Tycoon
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-64886
+53548
 Successfully changed project path to: C:/ProjectUniti/University-Tycoon/University Tycoon
 C:/ProjectUniti/University-Tycoon/University Tycoon
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/ProjectUniti/University-Tycoon/University Tycoon
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 98.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 111.16 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -59,100 +59,102 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     3962 MB
     Driver:   31.0.15.1691
+Shader 'TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56008
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.009460 seconds.
+Registered in 0.011124 seconds.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 138.14 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 105.59 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.832 seconds
+- Completed reload, in  0.730 seconds
 Domain Reload Profiling:
-	ReloadAssembly (833ms)
-		BeginReloadAssembly (86ms)
+	ReloadAssembly (730ms)
+		BeginReloadAssembly (81ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (620ms)
-			LoadAssemblies (84ms)
+		EndReloadAssembly (532ms)
+			LoadAssemblies (79ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (151ms)
+			SetupTypeCache (112ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (373ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (332ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (74ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (138ms)
+				InitializePlatformSupportModulesInManaged (67ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (106ms)
 				BeforeProcessingInitializeOnLoad (1ms)
 				ProcessInitializeOnLoadAttributes (104ms)
-				ProcessInitializeOnLoadMethodAttributes (55ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006176 seconds.
-Android Extension - Scanning For ADB Devices 746 ms
+Registered in 0.011589 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\ProjectUniti\University-Tycoon\University Tycoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\ProjectUniti\University-Tycoon\University Tycoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 115.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.414 seconds
+- Completed reload, in  1.299 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1415ms)
-		BeginReloadAssembly (158ms)
+	ReloadAssembly (1300ms)
+		BeginReloadAssembly (216ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (1090ms)
-			LoadAssemblies (108ms)
+			CreateAndSetChildDomain (117ms)
+		EndReloadAssembly (955ms)
+			LoadAssemblies (86ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (331ms)
+			SetupTypeCache (250ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (85ms)
-			SetupLoadedEditorAssemblies (496ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (512ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (22ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (117ms)
-				ProcessInitializeOnLoadAttributes (296ms)
-				ProcessInitializeOnLoadMethodAttributes (46ms)
-				AfterProcessingInitializeOnLoad (14ms)
+				InitializePlatformSupportModulesInManaged (14ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (115ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.04 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.65 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3258 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (55.6 KB). Loaded Objects now: 3720.
-Memory consumption went from 111.9 MB to 111.8 MB.
-Total: 7.591500 ms (FindLiveObjects: 0.492900 ms CreateObjectMapping: 1.015500 ms MarkObjects: 5.943600 ms  DeleteObjects: 0.137700 ms)
+Unloading 4093 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 38 unused Assets / (55.3 KB). Loaded Objects now: 4551.
+Memory consumption went from 154.8 MB to 154.8 MB.
+Total: 4.419600 ms (FindLiveObjects: 0.501300 ms CreateObjectMapping: 0.654500 ms MarkObjects: 3.141200 ms  DeleteObjects: 0.121400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -166,123 +168,91 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 261187.873952 seconds.
-  path: Assets/Scenes/MainScene_Profiles/Main Camera Profile.asset
-  artifactKey: Guid(6f1744d0eebc3ae48b15d6bc568cf4aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainScene_Profiles/Main Camera Profile.asset using Guid(6f1744d0eebc3ae48b15d6bc568cf4aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88c2b1083d9d5401f6d590c0e85962e8') in 0.046355 seconds 
+  Time since last request: 1302937.968218 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton-Group-.prefab
+  artifactKey: Guid(3d504a9ad5c3c41eaa1e637d4e5db64a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton-Group-.prefab using Guid(3d504a9ad5c3c41eaa1e637d4e5db64a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bafc993be62fe8edc9a7c43c8aa7826f') in 0.096852 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007078 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\ProjectUniti\University-Tycoon\University Tycoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\ProjectUniti\University-Tycoon\University Tycoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.40 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.739 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1740ms)
-		BeginReloadAssembly (217ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (68ms)
-		EndReloadAssembly (1358ms)
-			LoadAssemblies (144ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (418ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (79ms)
-			SetupLoadedEditorAssemblies (628ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (57ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (125ms)
-				ProcessInitializeOnLoadAttributes (364ms)
-				ProcessInitializeOnLoadMethodAttributes (61ms)
-				AfterProcessingInitializeOnLoad (17ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 6.52 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3252 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 3724.
-Memory consumption went from 111.8 MB to 111.8 MB.
-Total: 3.834400 ms (FindLiveObjects: 0.300900 ms CreateObjectMapping: 0.320700 ms MarkObjects: 3.157000 ms  DeleteObjects: 0.054800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Hexagon01_Red.prefab
+  artifactKey: Guid(2be8689af4340481493c2c9f51d8eeb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Hexagon01_Red.prefab using Guid(2be8689af4340481493c2c9f51d8eeb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d2aeecadf526ed9c9bd6ef99071c782') in 0.018327 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011104 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\ProjectUniti\University-Tycoon\University Tycoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\ProjectUniti\University-Tycoon\University Tycoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.733 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1735ms)
-		BeginReloadAssembly (168ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (45ms)
-		EndReloadAssembly (1406ms)
-			LoadAssemblies (104ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (400ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (95ms)
-			SetupLoadedEditorAssemblies (683ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (61ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (132ms)
-				ProcessInitializeOnLoadAttributes (414ms)
-				ProcessInitializeOnLoadMethodAttributes (58ms)
-				AfterProcessingInitializeOnLoad (17ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 6.18 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3252 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 3727.
-Memory consumption went from 111.8 MB to 111.8 MB.
-Total: 5.112700 ms (FindLiveObjects: 0.774900 ms CreateObjectMapping: 0.360200 ms MarkObjects: 3.861000 ms  DeleteObjects: 0.112400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_SideButton02_Right.prefab
+  artifactKey: Guid(4271882bd9b874fd4b12aede30dd42ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_SideButton02_Right.prefab using Guid(4271882bd9b874fd4b12aede30dd42ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd242428f40b016d6a7e56dcd8f60667d') in 0.017401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Polygon01.prefab
+  artifactKey: Guid(0c1621f73ead642cf828731c847c9f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Polygon01.prefab using Guid(0c1621f73ead642cf828731c847c9f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd052b7c23207d6cd6d38dfdae636f2e') in 0.040163 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Sky.prefab
+  artifactKey: Guid(889608bb0f2024861b25e0b3c772326e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Sky.prefab using Guid(889608bb0f2024861b25e0b3c772326e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36cd92f212b6224b150c3dda29d2aaf') in 0.032876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Polygon02.prefab
+  artifactKey: Guid(af3f4ebe4147149bda4ec06e4544153b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Polygon02.prefab using Guid(af3f4ebe4147149bda4ec06e4544153b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f930cb6ce643fa7faf1f79c2d03804') in 0.029360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Square05.prefab
+  artifactKey: Guid(923c23b8593254dc5aa874dc22afce97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Square05.prefab using Guid(923c23b8593254dc5aa874dc22afce97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f1e23a1b616dce0b308823f339c1302') in 0.013014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Gray.prefab
+  artifactKey: Guid(bdb8da037ac62489d9b2f6b1250107a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Gray.prefab using Guid(bdb8da037ac62489d9b2f6b1250107a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd797e395bbca747af18cfac363d05c79') in 0.031667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/_PrefabsPanel_Buttons.prefab
+  artifactKey: Guid(fa4a72350af3c40aaaab67c974c5c466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/_PrefabsPanel_Buttons.prefab using Guid(fa4a72350af3c40aaaab67c974c5c466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '159a7c15cbac3229e2a99586f6385dde') in 0.060847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓.prefab
+  artifactKey: Guid(95ce38ef8b364492db1ef5947c08316f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓.prefab using Guid(95ce38ef8b364492db1ef5947c08316f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65c77d7d5a8e04314c853faafe40a972') in 0.014616 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Circle02.prefab
+  artifactKey: Guid(3ca609fb4e566410fbf45cf21462a6aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Circle02.prefab using Guid(3ca609fb4e566410fbf45cf21462a6aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '852945d90241693bff60dcef3182987e') in 0.014279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Blue.prefab
+  artifactKey: Guid(8ab284b5214534699984acce51873626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Blue.prefab using Guid(8ab284b5214534699984acce51873626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd16077e41b7cc0354958ffb282317302') in 0.031219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Orange.prefab
+  artifactKey: Guid(a8fedbf9c9c4c46529e4f8f91744330c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_MainButton_Orange.prefab using Guid(a8fedbf9c9c4c46529e4f8f91744330c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98e6d778023842644e7f5d3605e771ec') in 0.035247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Square07.prefab
+  artifactKey: Guid(c5bd70ba55fb940eab65e02d859442dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Square07.prefab using Guid(c5bd70ba55fb940eab65e02d859442dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d9e8de9f49f9c7a2ca8755a551f648a') in 0.013648 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Hexagon01_Blue.prefab
+  artifactKey: Guid(766697219b1f9467e802797f5c91eeb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Buttons/Btn_OtherButton_Hexagon01_Blue.prefab using Guid(766697219b1f9467e802797f5c91eeb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b452b869d73b9577a6c235f1b51d2d79') in 0.015369 seconds 
