@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638152561294747086
-    m_Hash: 4074846344
+      ticks: 638152576302499342
+    m_Hash: 1757342850
   m_LockFileStatus:
     m_FilePath: C:/ProjectUniti/University-Tycoon/University Tycoon/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638152561604075503
-    m_Hash: 553237153
+      ticks: 638152576302499342
+    m_Hash: 933601201
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
