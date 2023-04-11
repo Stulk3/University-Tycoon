@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System;
+using System.Linq;
 
 [CustomPropertyDrawer(typeof(CardEvent))]
 public class CardDataDrawer : PropertyDrawer
@@ -26,6 +27,7 @@ public class CardDataDrawer : PropertyDrawer
         Rect foldoutBox = new Rect(position.min.x, position.min.y, position.size.x, EditorGUIUtility.singleLineHeight);
 
         property.isExpanded = EditorGUI.Foldout(foldoutBox, property.isExpanded, label);
+        DrawEventDirectionProperty(position);
 
         if (property.isExpanded)
         {
@@ -34,6 +36,7 @@ public class CardDataDrawer : PropertyDrawer
 
         EditorGUI.EndProperty();
     }
+    
     private void FillDrawProperties(SerializedProperty property)
     {
         _quote = property.FindPropertyRelative("_quote");
@@ -44,7 +47,20 @@ public class CardDataDrawer : PropertyDrawer
         _reputationImpact = property.FindPropertyRelative("_reputationImpact");
 
         _eventDirection = property.FindPropertyRelative("_eventDirection");
+        HideSelectedDirections(_eventDirection);
     }
+
+    private void HideSelectedDirections(SerializedProperty eventDirection)
+    {
+        var allDirections = Enum.GetNames(typeof(EventDirection));
+        
+        //var directions = (EventDirection) EditorGUILayout.EnumPopup("EventDirection");
+
+        //var directionsToDisplay = allDirections.Where(n => n.StartsWith("Left"));
+        //Enum selectedIndex = EditorGUILayout.EnumPopup("EventDirection", selectedIndex, directionsToDisplay);
+        //var newValues = (EventDirection)Enum.Parse(typeof(EventDirection), directionsToDisplay[selectedIndex]);
+    }
+
     private void DrawProperties(Rect position)
     {
         DrawQuoteProperty(position);
@@ -54,14 +70,26 @@ public class CardDataDrawer : PropertyDrawer
         DrawCorruptionImpactProperty(position);
         DrawReputationImpactProperty(position);
 
-        DrawEventDirectionProperty(position);
     }
-   private void DrawQuoteProperty(Rect position)
+    private void DrawEventDirectionProperty(Rect position)
+    {
+        EditorGUIUtility.labelWidth = 110;
+
+        float xPosition = position.min.x;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight);
+        float width = position.size.x;
+        float height = EditorGUIUtility.singleLineHeight;
+
+        Rect drawArea = new Rect(xPosition, yPosition, width, height);
+
+        EditorGUI.PropertyField(drawArea, _eventDirection, new GUIContent("Event Direction"));
+    }
+    private void DrawQuoteProperty(Rect position)
     {
         EditorGUIUtility.labelWidth = 60;
         
         float xPosition = position.min.x;
-        float yPosition = position.min.y + EditorGUIUtility.singleLineHeight;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 2) + propertyHeightPadding;
         float width = position.size.x;
         float height = EditorGUIUtility.singleLineHeight * 2;
 
@@ -75,7 +103,7 @@ public class CardDataDrawer : PropertyDrawer
         EditorGUIUtility.labelWidth = 110;
         
         float xPosition = position.min.x + 1;
-        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 3) + propertyHeightPadding;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 4) + propertyHeightPadding *2;
         float width = position.size.x * 0.45f;
         float height = EditorGUIUtility.singleLineHeight;
 
@@ -88,7 +116,7 @@ public class CardDataDrawer : PropertyDrawer
         EditorGUIUtility.labelWidth = 110;
 
         float xPosition = position.min.x + (position.width * 0.5f);
-        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 3) + propertyHeightPadding;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 4) + propertyHeightPadding * 2;
         float width = position.size.x * 0.45f;
         float height = EditorGUIUtility.singleLineHeight;
 
@@ -101,7 +129,7 @@ public class CardDataDrawer : PropertyDrawer
         EditorGUIUtility.labelWidth = 110;
 
         float xPosition = position.min.x + 1;
-        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 4) + propertyHeightPadding * 2;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 5) + propertyHeightPadding * 3;
         float width = position.size.x * 0.45f;
         float height = EditorGUIUtility.singleLineHeight;
 
@@ -114,7 +142,7 @@ public class CardDataDrawer : PropertyDrawer
         EditorGUIUtility.labelWidth = 110;
 
         float xPosition = position.min.x + (position.width * 0.5f);
-        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 4) + propertyHeightPadding* 2;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 5) + propertyHeightPadding * 3;
         float width = position.size.x * 0.45f;
         float height = EditorGUIUtility.singleLineHeight;
 
@@ -123,27 +151,15 @@ public class CardDataDrawer : PropertyDrawer
         EditorGUI.PropertyField(drawArea, _reputationImpact, new GUIContent("Reputation Impact"));
     }
 
-     private void DrawEventDirectionProperty(Rect position)
-    {
-        EditorGUIUtility.labelWidth = 110;
 
-        float xPosition = position.min.x;
-        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 5) + propertyHeightPadding * 3;
-        float width = position.size.x;
-        float height = EditorGUIUtility.singleLineHeight;
-
-        Rect drawArea = new Rect(xPosition, yPosition, width, height);
-
-        EditorGUI.PropertyField(drawArea, _eventDirection, new GUIContent("Event Direction"));
-    }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        float totalLines = 1;
+        float totalLines = 2;
 
         if (property.isExpanded)
         {
-            totalLines += 5;
+            totalLines += 4;
         }
         return ((EditorGUIUtility.singleLineHeight * totalLines) + (propertyHeightPadding * totalLines));
     }

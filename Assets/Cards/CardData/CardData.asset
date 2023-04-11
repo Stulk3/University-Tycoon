@@ -16,17 +16,4 @@ MonoBehaviour:
   description: 
   portrait: {fileID: 0}
   background: {fileID: 0}
-  _cardEvents:
-  - _quote: "\u0423\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0440\u043E\u0442 "
-    _moneyImpact: 1
-    _incomeImpact: 0
-    _corruptionImpact: 0
-    _reputationImpact: 0
-    _eventDirection: 0
-  - _quote: "\u0421\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043F\u0430\u043A\u0442
-      \u0441 \u0420\u043E\u0441\u0441\u0438\u0435\u0439"
-    _moneyImpact: 0
-    _incomeImpact: 0
-    _corruptionImpact: 0
-    _reputationImpact: 0
-    _eventDirection: 1
+  _cardEvents: []

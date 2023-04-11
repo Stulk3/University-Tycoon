@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardData", menuName = "Card/CardData", order = 1)]
+[CreateAssetMenu(fileName = "CardData", menuName = "Cards/CardData", order = 1)]
 public class CardData : ScriptableObject
 {
     public string title;
@@ -13,7 +13,7 @@ public class CardData : ScriptableObject
     public Sprite background;
 
 
-    [SerializeField] private CardEvent[] _cardEvents;
+    [SerializeField] private CardEvent[] _cardEvents = new CardEvent[4];
 
 
 
