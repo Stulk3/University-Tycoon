@@ -8,10 +8,12 @@ public class Quest : ScriptableObject
     [SerializeField] private string _title;
     [SerializeField] private Color _color;
     [SerializeField] private CardData[] _cards;
+    [SerializeField] private Achievement _achievement;
     private int _questProgress = 0;
     public string title => _title;
     public Color color => _color;
     public CardData[] cards => _cards;
+    public Achievement achievement => _achievement;
     public int questProgress => _questProgress;
 
     private void Awake()
@@ -33,7 +35,10 @@ public class Quest : ScriptableObject
     }
     private void FinishQuest()
     {
-
+        if(_achievement != null)
+        {
+            _achievement.Done();
+        }
     }
     private void SetQuestToCards(CardData[] cards)
     {
