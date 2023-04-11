@@ -19,16 +19,17 @@ public class CardEvent
     [SerializeField] private int _incomeImpact;
     [SerializeField] private int _corruptionImpact;
     [SerializeField] private int _reputationImpact;
+    [SerializeField] private int _studentsImpact;
 
     [SerializeField] private EventDirection _eventDirection;
     
 
-    public string Quote => _quote;
-    public int MoneyImpact => _moneyImpact;
-    public int IncomeImpact => _incomeImpact;
-    public int CorruptionImpact => _corruptionImpact;
-    public int ReputationImpact => _reputationImpact;
-
+    public string quote => _quote;
+    public int moneyImpact => _moneyImpact;
+    public int incomeImpact => _incomeImpact;
+    public int corruptionImpact => _corruptionImpact;
+    public int reputationImpact => _reputationImpact;
+    public int studentsImpact => _studentsImpact;
     public EventDirection EventDirection =>_eventDirection;
 
 

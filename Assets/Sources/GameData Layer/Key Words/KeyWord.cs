@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "KeyWord", menuName = "Cards/KeyWord", order = 1)]
+[CreateAssetMenu(fileName = "KeyWord", menuName = "Cards/KeyWord", order = 2)]
 public class KeyWord : ScriptableObject
 {
     [SerializeField] private string _title;

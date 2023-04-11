@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SwipeableView
 {
-    [CreateAssetMenu(menuName = "ScriptableObject/Create SwipeableViewData", fileName = "SwipeableViewData")]
+    [CreateAssetMenu(menuName = "SwipeSystem/SwipeableViewData", fileName = "SwipeableViewData")]
     public class SwipeableViewData : ScriptableObject
     {
         [SerializeField] float _swipeDuration = 0.28f;

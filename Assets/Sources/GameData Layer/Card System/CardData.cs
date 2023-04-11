@@ -18,6 +18,7 @@ public class CardData : ScriptableObject
 
     [SerializeField] private CardEvent[] _cardEvents;
     [SerializeField] private KeyWord[] _keyWords;
+    [SerializeField] private Quest _quest;
 
     public string title => _title;
     public string description => _description;
@@ -28,6 +29,8 @@ public class CardData : ScriptableObject
     public CardEvent[] cardEvents => _cardEvents;
 
     public KeyWord[] keyWords => _keyWords;
+    public Quest quest => _quest;
+
 
 
 
@@ -36,6 +39,20 @@ public class CardData : ScriptableObject
         CheckForCardEventArrayOverloading();
         SetCardEvents();
     }
+
+    public void SetQuest(Quest quest)
+    {
+        _quest = quest;
+    }
+
+    public void ProgressQuest()
+    {
+        if(_quest != null)
+        {
+            _quest.Progress();
+        }
+    }
+
     private void CheckForCardEventArrayOverloading()
     {
         if (cardEvents.Length > 4)

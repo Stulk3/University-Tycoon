@@ -13,6 +13,7 @@ public class CardDataDrawer : PropertyDrawer
     private SerializedProperty _incomeImpact;
     private SerializedProperty _corruptionImpact;
     private SerializedProperty _reputationImpact;
+    private SerializedProperty _studentsImpact;
 
     private SerializedProperty _eventDirection;
 
@@ -45,21 +46,11 @@ public class CardDataDrawer : PropertyDrawer
         _incomeImpact = property.FindPropertyRelative("_incomeImpact");
         _corruptionImpact = property.FindPropertyRelative("_corruptionImpact");
         _reputationImpact = property.FindPropertyRelative("_reputationImpact");
+        _studentsImpact = property.FindPropertyRelative("_studentsImpact");
 
         _eventDirection = property.FindPropertyRelative("_eventDirection");
-        HideSelectedDirections(_eventDirection);
     }
 
-    private void HideSelectedDirections(SerializedProperty eventDirection)
-    {
-        var allDirections = Enum.GetNames(typeof(EventDirection));
-        
-        //var directions = (EventDirection) EditorGUILayout.EnumPopup("EventDirection");
-
-        //var directionsToDisplay = allDirections.Where(n => n.StartsWith("Left"));
-        //Enum selectedIndex = EditorGUILayout.EnumPopup("EventDirection", selectedIndex, directionsToDisplay);
-        //var newValues = (EventDirection)Enum.Parse(typeof(EventDirection), directionsToDisplay[selectedIndex]);
-    }
 
     private void DrawProperties(Rect position)
     {
@@ -69,7 +60,7 @@ public class CardDataDrawer : PropertyDrawer
         DrawIncomeImpactProperty(position);
         DrawCorruptionImpactProperty(position);
         DrawReputationImpactProperty(position);
-
+        DrawStudentsImpactProperty(position);
     }
     private void DrawEventDirectionProperty(Rect position)
     {
@@ -150,6 +141,19 @@ public class CardDataDrawer : PropertyDrawer
 
         EditorGUI.PropertyField(drawArea, _reputationImpact, new GUIContent("Reputation Impact"));
     }
+    private void DrawStudentsImpactProperty(Rect position)
+    {
+        EditorGUIUtility.labelWidth = 110;
+
+        float xPosition = position.min.x;
+        float yPosition = position.min.y + (EditorGUIUtility.singleLineHeight * 6) + propertyHeightPadding * 4;
+        float width = position.size.x * 0.45f;
+        float height = EditorGUIUtility.singleLineHeight;
+
+        Rect drawArea = new Rect(xPosition, yPosition, width, height);
+
+        EditorGUI.PropertyField(drawArea, _reputationImpact, new GUIContent("Students Impact"));
+    }
 
 
 
@@ -159,7 +163,7 @@ public class CardDataDrawer : PropertyDrawer
 
         if (property.isExpanded)
         {
-            totalLines += 4;
+            totalLines += 5;
         }
         return ((EditorGUIUtility.singleLineHeight * totalLines) + (propertyHeightPadding * totalLines));
     }
