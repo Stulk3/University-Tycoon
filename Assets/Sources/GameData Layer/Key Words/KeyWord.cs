@@ -5,16 +5,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "KeyWord", menuName = "Cards/KeyWord", order = 1)]
 public class KeyWord : ScriptableObject
 {
-    [SerializeField] private string _name;
+    [SerializeField] private string _title;
     [SerializeField] private Color _color;
+
+    public string title => _title;
+    public Color color => _color;
 
     private void Awake()
     {
-        _name = "Default";
+        _title = "Default";
     }
     private void OnValidate()
     {
-        _name = this.name;
+        _title = this.name;
     }
     
 }

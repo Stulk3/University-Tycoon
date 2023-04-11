@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum EventDirection
 {
+    LeftAndRight,
     Left,
     Right,
     Down,
@@ -29,4 +30,10 @@ public class CardEvent
     public int ReputationImpact => _reputationImpact;
 
     public EventDirection EventDirection =>_eventDirection;
+
+
+    public void SetEventDirection(EventDirection direction)
+    {
+        _eventDirection = direction;
+    }
 }

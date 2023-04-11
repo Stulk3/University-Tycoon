@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e0d938979da62489c8cd5788440f40, type: 3}
-  m_Name: CardData
+  m_Script: {fileID: 11500000, guid: 2eac48f3c34d20040aa8335e1a8e4b4b, type: 3}
+  m_Name: "\u041A\u043E\u0440\u0440\u0443\u043F\u0446\u0438\u044F"
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  portrait: {fileID: 0}
-  background: {fileID: 0}
-  _cardEvents: []
+  _title: "\u041A\u043E\u0440\u0440\u0443\u043F\u0446\u0438\u044F"
+  _color: {r: 1, g: 0, b: 0, a: 0}
