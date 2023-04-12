@@ -152,7 +152,7 @@ public class CardDataDrawer : PropertyDrawer
 
         Rect drawArea = new Rect(xPosition, yPosition, width, height);
 
-        EditorGUI.PropertyField(drawArea, _reputationImpact, new GUIContent("Students Impact"));
+        EditorGUI.PropertyField(drawArea, _studentsImpact, new GUIContent("Students Impact"));
     }
 
 
