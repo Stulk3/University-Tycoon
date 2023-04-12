@@ -96,7 +96,7 @@ public class CardData : ScriptableObject
             }
             else if (cardEvent.EventDirection == EventDirection.LeftAndRight & _leftCardEvent != null & _rightCardEvent != null)
             {
-                cardEvent.SetEventDirection(EventDirection.Up);
+                _cardEvents = cardEvents.Take(_cardEvents.Count() - 1).ToArray();
                 Debug.LogWarning("CardData Can't Contain Left and Right Direction Twice");
             }
         }
