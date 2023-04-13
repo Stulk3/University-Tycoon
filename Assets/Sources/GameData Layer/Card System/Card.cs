@@ -1,15 +1,22 @@
 using UnityEngine;
 
-
-public class Card : MonoBehaviour
+namespace CardSystem
 {
-    [SerializeField] private string _cardName;
-    [SerializeField] private string _cardDescription;
-    [SerializeField] private Sprite _cardPortrait;
+    public abstract class Card: MonoBehaviour
+    {
+        private string _title;
+        private string _description;
+        public string Title => _title;
+        public string Description => _description;
 
-    public int _moneyImpact;
-    [SerializeField] private int _incomeImpact;
-    [SerializeField] private int _corruptionImpact;
-    [SerializeField] private int _reputationImpact;
-    
+
+        public void SetTitle(string title)
+        {
+            _title = title;
+        }
+        public void SetDescription(string description)
+        {
+            _description = description;
+        }
+    }
 }
