@@ -16,6 +16,13 @@ MonoBehaviour:
   _description: 
   _portrait: {fileID: 0}
   _background: {fileID: 0}
-  _cardEvents: []
+  _cardEvents:
+  - _quote: 
+    _moneyImpact: 0
+    _incomeImpact: 0
+    _corruptionImpact: 0
+    _reputationImpact: 0
+    _studentsImpact: 0
+    _eventDirection: 0
   _keyWords: []
-  _quest: {fileID: 0}
+  _quest: {fileID: 11400000, guid: 5bd80c7c55e6c9547909743cb68d7a5d, type: 2}

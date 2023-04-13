@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf73f20fb700b7148bea018eae85f647, type: 3}
   m_Name: Quest
   m_EditorClassIdentifier: 
-  _title: Default
-  _color: {r: 0, g: 0, b: 0, a: 0}
+  _title: Quest
+  _color: {r: 0.2624073, g: 1, b: 0.1830188, a: 0}
   _cards: []
+  _achievement: {fileID: 11400000, guid: 40865e2d05a42b3438918b987395522c, type: 2}
