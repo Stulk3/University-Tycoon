@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using MADD;
 
-namespace CardSystem
-{
+[Docs("Event Card Data")]
     [CreateAssetMenu(fileName = "EventCardData", menuName = "Cards/EventCard", order = 1)]
     public class EventCardData : ScriptableObject, ICard
     {
-        /// <summary>
-        /// Container for EventCard Data, used to categorize cards
-        /// </summary>
+        [Docs("Title of this card")]
         public string Title;
         [TextArea]
+        [Docs("Description of this card")]
         public string Description;
         [SerializeField] private Sprite _portrait;
         [SerializeField] private Sprite _background;
@@ -30,8 +29,9 @@ namespace CardSystem
         public CardEvent LeftCardEvent => _leftCardEvent;
         public CardEvent RightCardEvent => _rightCardEvent;
         public CardEvent[] CardEvents => _cardEvents;
-
+        [Docs("Keywords for this card")]
         public KeyWord[] keyWords => _keyWords;
+        
         public Quest quest => _quest;
 
         string ICard.Title { get => Title; set => Title = value; }
@@ -51,12 +51,12 @@ namespace CardSystem
             CheckForCardEventArrayOverloading();
             SetCardEvents();
         }
-
+        [Docs("Sets quest for this card")]
         public void SetQuest(Quest quest)
         {
             _quest = quest;
         }
-
+        [Docs("Sets quest for this card")]
         public void ProgressQuest()
         {
             if (_quest != null)
@@ -73,6 +73,7 @@ namespace CardSystem
                 throw new System.Exception("CardEvent can contain only 4 directions");
             }
         }
+        
         private void SetCardEvents()
         {
             _leftCardEvent = null;
@@ -114,4 +115,3 @@ namespace CardSystem
             }
         }
     }
-}
