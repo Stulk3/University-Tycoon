@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using CardSystem;
 
-public class EmployeeCard : Card
+public class EmployeeCard : ICard
 {
+    public string Title { get; set; }
+    public string Description { get; set; }
+
     private Color _backgroundColor;
     private Sprite _headSprite;
     private Sprite _glassesSprite;
@@ -16,6 +19,8 @@ public class EmployeeCard : Card
     public Sprite GlassesSprite => _glassesSprite;
     public Sprite BodySprite => _bodySprite; 
     public Sprite AccessoriesSprite => _accessoriesSprite;
+
+
 
     public EmployeeCard(Color backgroundColor, Sprite headSprite, Sprite glassesSprite, Sprite bodySprite, Sprite accessoriesSprite)
     {

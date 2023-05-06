@@ -6,12 +6,15 @@ using UnityEngine;
 
 namespace CardSystem
 {
-    [CreateAssetMenu(fileName = "EventCardData", menuName = "Cards/EventCard Data", order = 1)]
-    public class EventCardData : ScriptableObject
+    [CreateAssetMenu(fileName = "EventCardData", menuName = "Cards/EventCard", order = 1)]
+    public class EventCardData : ScriptableObject, ICard
     {
-        [SerializeField] private string _title;
+        /// <summary>
+        /// Container for EventCard Data, used to categorize cards
+        /// </summary>
+        public string Title;
         [TextArea]
-        [SerializeField] private string _description;
+        public string Description;
         [SerializeField] private Sprite _portrait;
         [SerializeField] private Sprite _background;
 
@@ -22,8 +25,6 @@ namespace CardSystem
         [SerializeField] private KeyWord[] _keyWords;
         [SerializeField] private Quest _quest;
 
-        public string Title => _title;
-        public string Description => _description;
         public Sprite Portrait => _portrait;
         public Sprite Background => _background;
         public CardEvent LeftCardEvent => _leftCardEvent;
@@ -33,9 +34,18 @@ namespace CardSystem
         public KeyWord[] keyWords => _keyWords;
         public Quest quest => _quest;
 
-
-
-
+        string ICard.Title { get => Title; set => Title = value; }
+        string ICard.Description { get => Description; set => Description = value; }
+        private void Awake()
+        {
+            StaticData.AddCardToEventDataCount();
+            Debug.Log(StaticData.EventCardsCount);
+        }
+        private void OnDisable()
+        {
+            StaticData.DeleteCardFromEventDataCount();
+            Debug.Log(StaticData.EventCardsCount);
+        }
         private void OnValidate()
         {
             CheckForCardEventArrayOverloading();
