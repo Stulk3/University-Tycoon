@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 using System.Linq;
+using CardSystem;
 
 [CustomPropertyDrawer(typeof(CardEvent))]
 public class CardDataDrawer : PropertyDrawer

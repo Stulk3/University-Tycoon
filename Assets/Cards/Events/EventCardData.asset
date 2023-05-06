@@ -10,19 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80e0d938979da62489c8cd5788440f40, type: 3}
-  m_Name: CardData
+  m_Name: EventCardData
   m_EditorClassIdentifier: 
-  _title: 
-  _description: 
+  Title: 
+  Description: 
   _portrait: {fileID: 0}
   _background: {fileID: 0}
-  _cardEvents:
-  - _quote: 
-    _moneyImpact: 0
-    _incomeImpact: 0
-    _corruptionImpact: 0
-    _reputationImpact: 0
-    _studentsImpact: 0
-    _eventDirection: 0
+  _cardEvents: []
   _keyWords: []
-  _quest: {fileID: 11400000, guid: 5bd80c7c55e6c9547909743cb68d7a5d, type: 2}
+  _quest: {fileID: 0}
