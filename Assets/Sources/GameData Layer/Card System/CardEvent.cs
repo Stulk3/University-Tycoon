@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
+namespace CardSystem
+{
     public enum EventDirection
     {
         LeftAndRight,
@@ -41,3 +41,4 @@ using UnityEngine;
             _eventDirection = direction;
         }
     }
+}
