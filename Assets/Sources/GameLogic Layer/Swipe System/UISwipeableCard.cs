@@ -85,7 +85,26 @@ namespace SwipeableView
         {
             gameObject.SetActive(visible);
         }
-
+        /// <summary>
+        /// Called when a swipe has ended Right direction
+        /// </summary>
+        protected virtual void OnRightSwipeEnded()
+        { }
+        /// <summary>
+        /// Called when a swipe has ended Left direction
+        /// </summary>
+        protected virtual void OnLeftSwipeEnded()
+        { }
+        /// <summary>
+        /// Called when an automatic swipe has ended and the position of the card has been finalized(Right).
+        /// </summary>
+        protected virtual void OnAutoRightSwipeEnded()
+        { }
+        /// <summary>
+        /// Called when an automatic swipe has ended and the position of the card has been finalized(Left).
+        /// </summary>
+        protected virtual void OnAutoLeftSwipeEnded()
+        { }
         /// <summary>
         /// Updates the position.
         /// </summary>
@@ -156,6 +175,7 @@ namespace SwipeableView
             var vec = from != Vector3.zero ? (from - Vector3.zero).normalized : Vector3.right;
             var to = vec * _screenSize;
             StartCoroutine(MoveCoroutine(from, to, () => ActionSwipedRight?.Invoke(this)));
+            OnRightSwipeEnded();
         }
 
         public void AutoSwipeLeft(Vector3 from)
@@ -163,6 +183,7 @@ namespace SwipeableView
             var vec = from != Vector3.zero ? (from - Vector3.zero).normalized : Vector3.left;
             var to = vec * _screenSize;
             StartCoroutine(MoveCoroutine(from, to, () => ActionSwipedLeft?.Invoke(this)));
+            OnLeftSwipeEnded();
         }
 #endregion
 

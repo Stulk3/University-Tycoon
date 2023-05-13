@@ -6,10 +6,10 @@ using UnityEngine;
 public class KeyWord : ScriptableObject
 {
     [SerializeField] private string _title;
-    [SerializeField] private Color _color;
+    [SerializeField] private Color32 _color;
 
     public string Title => _title;
-    public Color Color => _color;
+    public Color32 Color => _color;
 
     private void Awake()
     {
