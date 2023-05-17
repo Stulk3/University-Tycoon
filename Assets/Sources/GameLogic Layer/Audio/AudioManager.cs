@@ -6,9 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    private AudioClip _musicClip;
-    private AudioClip _penSoundClip;
-    private AudioClip _trashSoundClip;
+    [SerializeField] private AudioClip _musicClip;
+    [SerializeField] private AudioClip _penSoundClip;
+    [SerializeField] private AudioClip _trashSoundClip;
 
     public static AudioClip penSound => instance._penSoundClip;
     public static AudioClip trashSound => instance._trashSoundClip;
