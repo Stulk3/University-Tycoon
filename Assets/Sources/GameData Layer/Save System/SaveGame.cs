@@ -11,7 +11,10 @@ public class SaveGame : MonoBehaviour
         gameData = new GameData();
         
     }
-
+    private void OnDisable()
+    {
+        Save();
+    }
     public void Save()
     {
         gameData.money = University.Money;

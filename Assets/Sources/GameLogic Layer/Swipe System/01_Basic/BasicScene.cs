@@ -7,8 +7,11 @@ namespace SwipeableView
 {
     public class BasicScene : MonoBehaviour
     {
+        public static BasicScene instance;
         [SerializeField]
         private UISwipeableViewBasic swipeableView = default;
+
+        public static UISwipeableViewBasic SwipeableView => instance.swipeableView;
 
         void Start()
         {
@@ -20,6 +23,13 @@ namespace SwipeableView
                 .ToList();
 
             swipeableView.UpdateData(data);
+        }
+        private void Awake()
+        {
+            if(instance == null)
+            {
+                instance = this;
+            }
         }
 
         public void OnClickRight()

@@ -38,6 +38,9 @@ namespace SwipeableView
 
 #region DragHandler
         Vector2 pointerStartLocalPosition;
+        [SerializeField] private float xMultiplier = 1;
+        [SerializeField] private float yMultiplier = 1;
+
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
             if (eventData.button != PointerEventData.InputButton.Left)
@@ -81,11 +84,14 @@ namespace SwipeableView
             {
                 return;
             }
-
             var pointerDelta = localCursor - pointerStartLocalPosition;
             swipeable.Swipe(pointerDelta);
         }
-
+        private bool isPositive(float coordinate)
+        {
+            if (Mathf.Sign(coordinate) == -1) return false;
+            else return true;
+        }
         void IEndDragHandler.OnEndDrag(PointerEventData eventData)
         {
             if (eventData.button != PointerEventData.InputButton.Left)
