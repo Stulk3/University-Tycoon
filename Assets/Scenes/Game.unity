@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bf0f88ae70b4ad8a5a54b7f693f15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMultiplier: 7
+  xMultiplier: 1
   yMultiplier: 1
 --- !u!224 &258166771
 RectTransform:
@@ -3493,7 +3493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70beb13a7c72741b5930bd5a2d32e21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swipeableView: {fileID: 258166769}
+  swipeableView: {fileID: 0}
 --- !u!114 &1661848213
 MonoBehaviour:
   m_ObjectHideFlags: 0
