@@ -44,7 +44,6 @@ namespace CardSystem
         private void OnDisable()
         {
             StaticData.DeleteCardFromEventDataCount();
-            Debug.Log(StaticData.EventCardsCount);
         }
         private void OnValidate()
         {
@@ -91,7 +90,7 @@ namespace CardSystem
                     cardEvent.SetEventDirection(EventDirection.Right);
                     Debug.LogWarning("CardData Can Contain Only One Left Direction");
                 }
-                else if (cardEvent.EventDirection == EventDirection.Right & _leftCardEvent == null)
+                else if (cardEvent.EventDirection == EventDirection.Right & _rightCardEvent == null)
                 {
                     _rightCardEvent = cardEvent;
 

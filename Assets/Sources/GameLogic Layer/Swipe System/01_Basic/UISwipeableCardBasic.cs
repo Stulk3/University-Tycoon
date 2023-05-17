@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using CardSystem;
 
 namespace SwipeableView
 {
     public class UISwipeableCardBasic : UISwipeableCard<BasicCardData>
     {
+        [SerializeField] private UISwipeableEventCard _eventCard;
         [SerializeField]
         private Image _background = default;
 
@@ -32,6 +34,16 @@ namespace SwipeableView
         {
             _imageRight.alpha = rate;
             _imageLeft.alpha = 0;
+        }
+        protected override void OnLeftSwipeEnded()
+        {
+            _eventCard.ActivateCardEvent(EventDirection.Left);
+            University.instance.GetIncome();
+        }
+        protected override void OnRightSwipeEnded()
+        {
+            _eventCard.ActivateCardEvent(EventDirection.Right);
+            University.instance.GetIncome();
         }
     }
 }
