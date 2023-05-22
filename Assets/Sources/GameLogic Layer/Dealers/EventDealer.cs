@@ -11,6 +11,7 @@ public class EventDealer : MonoBehaviour
 
     [SerializeField] private UISwipeableViewBasic _swipeableView = default;
 
+    [SerializeField] private UISwipeableCardBasic[] _activeCardsPool; 
     
     [SerializeField] private EventCardData[] _eventCards;
     [Space(2f)]
@@ -19,6 +20,7 @@ public class EventDealer : MonoBehaviour
     [SerializeField] private KeyWord[] _keyWords;
     [SerializeField] private Quest[] _quests;
 
+    public static UISwipeableCardBasic[] ActiveCardsPool => instance._activeCardsPool;
     public EventCardData[] eventCards => _eventCards;
     public EventCardData[] eventCardsPool => _eventCardsPool;
     public KeyWord[] keyWords => _keyWords;
@@ -29,6 +31,7 @@ public class EventDealer : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        _activeCardsPool = new UISwipeableCardBasic[2] { null, null };
     }
     private void Update()
     {
@@ -46,6 +49,23 @@ public class EventDealer : MonoBehaviour
         _swipeableView.UpdateData(data);
     }
 
+    public static void SwapOrFillArray(UISwipeableCardBasic card)
+    {
+        if (instance._activeCardsPool[0] == null && instance._activeCardsPool[1] == null)
+        {
+            instance._activeCardsPool[0] = card;
+        }
+        else if (instance._activeCardsPool[0] != null && instance._activeCardsPool[1] == null)
+        {
+            instance._activeCardsPool[1] = card;
+        }
+        else
+        {
+            var temp = instance._activeCardsPool[0];
+            instance._activeCardsPool[0] = instance._activeCardsPool[1];
+            instance._activeCardsPool[1] = temp;
+        }
+    }
     public void GenerateCardPool(ICard[] cards)
     {
 

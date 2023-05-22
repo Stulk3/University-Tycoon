@@ -38,8 +38,6 @@ namespace SwipeableView
 
 #region DragHandler
         Vector2 pointerStartLocalPosition;
-        [SerializeField] private float xMultiplier = 1;
-        [SerializeField] private float yMultiplier = 1;
 
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {

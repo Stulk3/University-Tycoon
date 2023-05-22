@@ -7,6 +7,7 @@ namespace SwipeableView
 {
     public class UISwipeableCardBasic : UISwipeableCard<BasicCardData>
     {
+        //public static UISwipeableCardBasic ActiveCard = null;
         [SerializeField] private UISwipeableEventCard _eventCard;
         [SerializeField]
         private Image _background = default;
@@ -21,33 +22,46 @@ namespace SwipeableView
         [SerializeField] private TextMeshProUGUI _studentsPreview;
         [SerializeField] private TextMeshProUGUI _moneyPreview;
         [SerializeField] private TextMeshProUGUI _incomePreview;
-
         private void Start()
+        {
+            SetPreviews();
+            //OnCardActivated();
+            EventDealer.SwapOrFillArray(this);
+        }
+        //private void OnCardActivated()
+        //{
+        //    if(ActiveCard == null)
+        //    {
+        //        ActiveCard = this;
+        //    }
+        //    Debug.Log("Card Set:" + ActiveCard + " " + _background.color);
+        //}
+        //private void DeactivateCard()
+        //{
+        //    ActiveCard = null;
+        //}
+        private void SetPreviews()
         {
             _corruptionPreview = UserInterface.CorruptionPreview;
             _studentsPreview = UserInterface.ReputationPreview;
             _moneyPreview = UserInterface.MoneyPreview;
             _incomePreview = UserInterface.IncomePreview;
-
-            _corruptionPreview.alpha = 0;
-            _studentsPreview.alpha = 0;
-            _moneyPreview.alpha = 0;
-            _incomePreview.alpha = 0;
         }
         public override void UpdateContent(BasicCardData data)
         {
+            //OnCardActivated();
+
             _background.color = data.color;
 
             _imageLeft.alpha = 0;
             _imageRight.alpha = 0;
-            Debug.Log("Update");
         }
 
         protected override void SwipingRight(float rate)
         {
             _imageLeft.alpha = rate;
             _imageRight.alpha = 0;
-
+            
             PreviewEventCardImpacts(EventDirection.Right, rate);
         }
         protected override void SwipingLeft(float rate)
@@ -61,36 +75,102 @@ namespace SwipeableView
         {
             _eventCard.ActivateCardEvent(EventDirection.Left);
             University.instance.GetIncome();
+            //DeactivateCard();
+            EventDealer.SwapOrFillArray(this);
         }
         protected override void OnRightSwipeEnded()
         {
             _eventCard.ActivateCardEvent(EventDirection.Right);
             University.instance.GetIncome();
+            //DeactivateCard();
+            EventDealer.SwapOrFillArray(this);
         }
         private void PreviewEventCardImpacts(EventDirection eventDirection, float rate)
         {
-            if (_corruptionPreview != null && _eventCard.GetEventCorruptionImpact(eventDirection) != 0)
+            
+            if (_corruptionPreview != null && EventDealer.ActiveCardsPool[0] == this)
             {
-                _corruptionPreview.text = _eventCard.GetEventCorruptionImpact(eventDirection).ToString();
-                _corruptionPreview.alpha = rate;
+                var value = _eventCard.GetEventCorruptionImpact(eventDirection);
+                if (value > 0)
+                {
+                    _corruptionPreview.text = "+" + value.ToString() + "K";
+                    _corruptionPreview.color = new Color32(0, 180, 0, 255);
+                    _corruptionPreview.alpha = rate;
+                }
+                else if (value == 0)
+                {
+                    _corruptionPreview.alpha = 0;
+                }
+                else if (value < 0)
+                {
+                    _corruptionPreview.text = value.ToString() + "K";
+                    _corruptionPreview.color = new Color32(180, 0, 0, 255);
+                    _corruptionPreview.alpha = rate;
+                }
             }
-            if (_studentsPreview != null && _eventCard.GetEventStudentsImpact(eventDirection) != 0)
+            if (_studentsPreview != null && EventDealer.ActiveCardsPool[0] == this)
             {
-                _studentsPreview.text = _eventCard.GetEventStudentsImpact(eventDirection).ToString();
-                _studentsPreview.alpha = rate;
+                var value = _eventCard.GetEventStudentsImpact(eventDirection);
+                if (value > 0)
+                {
+                    _studentsPreview.text = "+" + value.ToString() + "K";
+                    _studentsPreview.color = new Color32(0, 180, 0, 255);
+                    _studentsPreview.alpha = rate;
+                }
+                else if (value == 0)
+                {
+                    _studentsPreview.alpha = 0;
+                }
+                else if (value < 0)
+                {
+                    _studentsPreview.text = value.ToString() + "K";
+                    _studentsPreview.color = new Color32(180, 0, 0, 255);
+                    _studentsPreview.alpha = rate;
+                }
             }
 
-            if (_moneyPreview != null && _eventCard.GetEventMoneyImpact(eventDirection) != 0)
+            if (_moneyPreview != null && EventDealer.ActiveCardsPool[0] == this)
             {
-                _moneyPreview.text = _eventCard.GetEventMoneyImpact(eventDirection).ToString();
-                _moneyPreview.alpha = rate;
+                var value = _eventCard.GetEventMoneyImpact(eventDirection);
+                if (value > 0)
+                {
+                    _moneyPreview.text = "+" + value.ToString() + "K";
+                    _moneyPreview.color = new Color32(0, 180, 0, 255);
+                    _moneyPreview.alpha = rate;
+                }
+                else if (value == 0)
+                {
+                    _moneyPreview.alpha = 0;
+                }
+                else if (value < 0)
+                {
+                    _moneyPreview.text = value.ToString() + "K";
+                    _moneyPreview.color = new Color32(180, 0, 0, 255);
+                    _moneyPreview.alpha = rate;
+                }
             }
 
-            if (_incomePreview != null && _eventCard.GetEventIncomeImpact(eventDirection) != 0)
+            if (_incomePreview != null && EventDealer.ActiveCardsPool[0] == this)
             {
-                _incomePreview.text = _eventCard.GetEventIncomeImpact(eventDirection).ToString();
-                _incomePreview.alpha = rate;
+                var value = _eventCard.GetEventIncomeImpact(eventDirection);
+                if (value > 0)
+                {
+                    _incomePreview.text = "+" + value.ToString() + "K";
+                    _incomePreview.color = new Color32(0, 180, 0, 255);
+                    _incomePreview.alpha = rate;
+                }
+                else if (value == 0)
+                {
+                    _incomePreview.alpha = 0;
+                }
+                else if (value < 0)
+                {
+                    _incomePreview.text = value.ToString() + "K";
+                    _incomePreview.color = new Color32(180, 0, 0, 255);
+                    _incomePreview.alpha = rate;
+                }
             }
         }
+
     }
 }

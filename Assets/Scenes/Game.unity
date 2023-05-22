@@ -682,8 +682,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278236160
-  m_fontColor: {r: 0, g: 0.7058824, b: 0, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -796,8 +796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bf0f88ae70b4ad8a5a54b7f693f15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMultiplier: 1
-  yMultiplier: 1
 --- !u!224 &258166771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1460,8 +1458,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3922,8 +3920,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4131,6 +4129,7 @@ GameObject:
   - component: {fileID: 1661848214}
   - component: {fileID: 1661848213}
   - component: {fileID: 1661848212}
+  - component: {fileID: 1661848217}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4239,6 +4238,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1661848217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661848211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d16ad61888b964097776bb32c05ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _swipeableView: {fileID: 0}
+  _eventCards: []
+  _eventCardsPool: []
+  _keyWords: []
+  _quests: []
 --- !u!1 &1692024829
 GameObject:
   m_ObjectHideFlags: 0
@@ -5379,8 +5395,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278236160
-  m_fontColor: {r: 0, g: 0.7058824, b: 0, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
