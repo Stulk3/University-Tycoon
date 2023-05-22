@@ -31,17 +31,5 @@ namespace SwipeableView
                 instance = this;
             }
         }
-
-        public void OnClickRight()
-        {
-            if (swipeableView.IsAutoSwiping) return;
-            swipeableView.AutoSwipe(SwipeDirection.Right);
-        }
-
-        public void OnClickLeft()
-        {
-            if (swipeableView.IsAutoSwiping) return;
-            swipeableView.AutoSwipe(SwipeDirection.Left);
-        }
     }
 }

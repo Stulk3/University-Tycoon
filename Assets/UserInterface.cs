@@ -11,7 +11,19 @@ public class UserInterface : MonoBehaviour
     [Header("Indicators")]
     [SerializeField] private TMP_Text _moneyIndicator;
     [SerializeField] private TMP_Text _incomeIndicator;
+    
+    [Space(5f)]
+    [Header("Previews")]
+    [SerializeField] private TextMeshProUGUI _corruptionPreview;
+    [SerializeField] private TextMeshProUGUI _studentsPreview;
+    [SerializeField] private TextMeshProUGUI _moneyPreview;
+    [SerializeField] private TextMeshProUGUI _incomePreview;
+    public static TextMeshProUGUI CorruptionPreview => instance._corruptionPreview;
+    public static TextMeshProUGUI ReputationPreview => instance._studentsPreview;
+    public static TextMeshProUGUI MoneyPreview => instance._moneyPreview;
+    public static TextMeshProUGUI IncomePreview => instance._incomePreview;
 
+    [Space(5f)]
     [Header("Selectors")]
     [SerializeField] private GameObject _documentsSelector;
     [SerializeField] private GameObject _constructionSelector;
@@ -27,7 +39,17 @@ public class UserInterface : MonoBehaviour
     [SerializeField] private GameObject _leftButton;
     [SerializeField] private  SpriteRenderer _leftIcon;
 
+    [Space(5f)]
+    [Header("Icons")]
+    [SerializeField] private Sprite _trashIcon;
 
+
+    [Space(5f)]
+    [Header("Sections")]
+    [SerializeField] private GameObject _documents;
+    [SerializeField] private GameObject _construction;
+    [SerializeField] private GameObject _shop;
+    [SerializeField] private GameObject _profile;
     public static GameObject DocumentsSelector => instance._documentsSelector;
     public static GameObject ConstructionSelector => instance._constructionSelector;
     public static GameObject ShopSelector => instance._shopSelector;
@@ -102,5 +124,36 @@ public class UserInterface : MonoBehaviour
     private void UpdateStudentsValue(int value)
     {
         
+    }
+    public void SelectDocumentsSection()
+    {
+        _documents.SetActive(true);
+        _construction.SetActive(false);
+        _shop.SetActive(false);
+        _profile.SetActive(false);
+    }
+
+    public void SelectConstructionSection()
+    {
+        _documents.SetActive(false);
+        _construction.SetActive(true);
+        _shop.SetActive(false);
+        _profile.SetActive(false);
+    }
+
+    public void SelectShopSection()
+    {
+        _documents.SetActive(false);
+        _construction.SetActive(false);
+        _shop.SetActive(true);
+        _profile.SetActive(false);
+    }
+
+    public void SelectProfileSection()
+    {
+        _documents.SetActive(false);
+        _construction.SetActive(false);
+        _shop.SetActive(false);
+        _profile.SetActive(true);
     }
 }

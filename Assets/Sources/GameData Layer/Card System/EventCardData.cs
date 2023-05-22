@@ -50,7 +50,17 @@ namespace CardSystem
             CheckForCardEventArrayOverloading();
             SetCardEvents();
         }
-
+        public CardEvent GetEventByDirection(EventDirection eventDirection)
+        {
+            switch (eventDirection)
+            {
+                case EventDirection.Left:
+                    return LeftCardEvent;
+                case EventDirection.Right:
+                    return RightCardEvent;
+            }
+            return null;
+        }
         public void SetQuest(Quest quest)
         {
             _quest = quest;

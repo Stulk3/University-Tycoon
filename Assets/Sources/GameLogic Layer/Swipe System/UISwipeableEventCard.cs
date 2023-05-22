@@ -105,6 +105,25 @@ namespace SwipeableView
             
 
         }
-       
+        public int GetEventMoneyImpact(EventDirection eventDirection)
+        {
+            return _eventCardData.GetEventByDirection(eventDirection).MoneyImpact;
+        }
+        public int GetEventIncomeImpact(EventDirection eventDirection)
+        {
+            return _eventCardData.GetEventByDirection(eventDirection).IncomeImpact;
+        }
+        public int GetEventCorruptionImpact(EventDirection eventDirection)
+        {
+            return _eventCardData.GetEventByDirection(eventDirection).CorruptionImpact;
+        }
+        public int GetEventStudentsImpact(EventDirection eventDirection)
+        {
+            return _eventCardData.GetEventByDirection(eventDirection).StudentsImpact;
+        }
+        public int GetEventReputationImpact(EventDirection eventDirection)
+        {
+            return _eventCardData.GetEventByDirection(eventDirection).ReputationImpact;
+        }
     }
 }

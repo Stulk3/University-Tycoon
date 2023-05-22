@@ -26,6 +26,9 @@ public class OnButtonClick : MonoBehaviour
             UserInterface.ConstructionSelector.SetActive(false);
             UserInterface.ShopSelector.SetActive(false);
             UserInterface.ProfileSelector.SetActive(false);
+
+            UserInterface.instance.SelectDocumentsSection();
+
         }
     }
     public void ConstructionSelection()
@@ -36,6 +39,9 @@ public class OnButtonClick : MonoBehaviour
             UserInterface.ConstructionSelector.SetActive(true);
             UserInterface.ShopSelector.SetActive(false);
             UserInterface.ProfileSelector.SetActive(false);
+
+            UserInterface.instance.SelectConstructionSection();
+
         }
     }
     public void ShopSelection()
@@ -46,6 +52,8 @@ public class OnButtonClick : MonoBehaviour
             UserInterface.ConstructionSelector.SetActive(false);
             UserInterface.ShopSelector.SetActive(true);
             UserInterface.ProfileSelector.SetActive(false);
+
+            UserInterface.instance.SelectShopSection();
         }
     }
     public void ProfileSelection()
@@ -56,6 +64,9 @@ public class OnButtonClick : MonoBehaviour
             UserInterface.ConstructionSelector.SetActive(false);
             UserInterface.ShopSelector.SetActive(false);
             UserInterface.ProfileSelector.SetActive(true);
+
+            UserInterface.instance.SelectProfileSection();
+
         }
     }
 }
