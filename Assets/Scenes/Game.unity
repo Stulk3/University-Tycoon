@@ -4144,7 +4144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661848211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70beb13a7c72741b5930bd5a2d32e21f, type: 3}
   m_Name: 
@@ -4250,7 +4250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d16ad61888b964097776bb32c05ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swipeableView: {fileID: 0}
+  _swipeableView: {fileID: 258166769}
+  _activeCardsPool: []
   _eventCards: []
   _eventCardsPool: []
   _keyWords: []

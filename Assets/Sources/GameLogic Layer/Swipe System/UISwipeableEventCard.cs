@@ -107,23 +107,43 @@ namespace SwipeableView
         }
         public int GetEventMoneyImpact(EventDirection eventDirection)
         {
-            return _eventCardData.GetEventByDirection(eventDirection).MoneyImpact;
+            if (_eventCardData.GetEventByDirection(eventDirection) != null)
+            {
+                return _eventCardData.GetEventByDirection(eventDirection).MoneyImpact;   
+            }
+            return 0;
         }
         public int GetEventIncomeImpact(EventDirection eventDirection)
         {
-            return _eventCardData.GetEventByDirection(eventDirection).IncomeImpact;
+            if (_eventCardData.GetEventByDirection(eventDirection) != null)
+            {
+                return _eventCardData.GetEventByDirection(eventDirection).IncomeImpact;
+            }
+            return 0;
         }
         public int GetEventCorruptionImpact(EventDirection eventDirection)
         {
-            return _eventCardData.GetEventByDirection(eventDirection).CorruptionImpact;
+            if (_eventCardData.GetEventByDirection(eventDirection) != null)
+            {
+                return _eventCardData.GetEventByDirection(eventDirection).CorruptionImpact;
+            }
+            return 0;
         }
         public int GetEventStudentsImpact(EventDirection eventDirection)
         {
-            return _eventCardData.GetEventByDirection(eventDirection).StudentsImpact;
+            if (_eventCardData.GetEventByDirection(eventDirection) != null)
+            {
+                return _eventCardData.GetEventByDirection(eventDirection).StudentsImpact;
+            }
+            return 0;
         }
         public int GetEventReputationImpact(EventDirection eventDirection)
         {
-            return _eventCardData.GetEventByDirection(eventDirection).ReputationImpact;
+            if (_eventCardData.GetEventByDirection(eventDirection) != null)
+            {
+                return _eventCardData.GetEventByDirection(eventDirection).ReputationImpact;
+            }
+            return 0;
         }
     }
 }

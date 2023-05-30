@@ -7,7 +7,6 @@ namespace SwipeableView
 {
     public class UISwipeableCardBasic : UISwipeableCard<BasicCardData>
     {
-        //public static UISwipeableCardBasic ActiveCard = null;
         [SerializeField] private UISwipeableEventCard _eventCard;
         [SerializeField]
         private Image _background = default;
@@ -25,21 +24,8 @@ namespace SwipeableView
         private void Start()
         {
             SetPreviews();
-            //OnCardActivated();
-            EventDealer.SwapOrFillArray(this);
+            EventDealer.SwapOrFillActiveCardsPool(this);
         }
-        //private void OnCardActivated()
-        //{
-        //    if(ActiveCard == null)
-        //    {
-        //        ActiveCard = this;
-        //    }
-        //    Debug.Log("Card Set:" + ActiveCard + " " + _background.color);
-        //}
-        //private void DeactivateCard()
-        //{
-        //    ActiveCard = null;
-        //}
         private void SetPreviews()
         {
             _corruptionPreview = UserInterface.CorruptionPreview;
@@ -49,8 +35,6 @@ namespace SwipeableView
         }
         public override void UpdateContent(BasicCardData data)
         {
-            //OnCardActivated();
-
             _background.color = data.color;
 
             _imageLeft.alpha = 0;
@@ -74,16 +58,18 @@ namespace SwipeableView
         protected override void OnLeftSwipeEnded()
         {
             _eventCard.ActivateCardEvent(EventDirection.Left);
+
             University.instance.GetIncome();
-            //DeactivateCard();
-            EventDealer.SwapOrFillArray(this);
+
+            EventDealer.SwapOrFillActiveCardsPool(this);
         }
         protected override void OnRightSwipeEnded()
         {
             _eventCard.ActivateCardEvent(EventDirection.Right);
+
             University.instance.GetIncome();
-            //DeactivateCard();
-            EventDealer.SwapOrFillArray(this);
+
+            EventDealer.SwapOrFillActiveCardsPool(this);
         }
         private void PreviewEventCardImpacts(EventDirection eventDirection, float rate)
         {

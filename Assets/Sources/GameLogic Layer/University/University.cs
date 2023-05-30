@@ -77,23 +77,28 @@ public class University : MonoBehaviour
     }
     public void MakeImpact(CardEvent data)
     {
-        _money += data.MoneyImpact;
-        onMoneyChanged?.Invoke(_money);
+        if(data != null)
+        {
+            _money += data.MoneyImpact;
+            onMoneyChanged?.Invoke(_money);
 
-        _income += data.IncomeImpact;
-        onIncomeChanged?.Invoke(_income);
+            _income += data.IncomeImpact;
+            onIncomeChanged?.Invoke(_income);
 
-        _corruption += data.CorruptionImpact;
-        onCorruptionChanged?.Invoke(_corruption);
+            _corruption += data.CorruptionImpact;
+            onCorruptionChanged?.Invoke(_corruption);
 
-        _reputation += data.ReputationImpact;
-        onReputationChanged?.Invoke(_reputation);
+            _reputation += data.ReputationImpact;
+            onReputationChanged?.Invoke(_reputation);
 
-        _students += data.StudentsImpact;
-        onStudentsChanged?.Invoke(_students);
+            _students += data.StudentsImpact;
+            onStudentsChanged?.Invoke(_students);
+        }
+
     }
     public void GetIncome()
     {
         _money += _income;
+        onMoneyChanged?.Invoke(_money);
     }
 }

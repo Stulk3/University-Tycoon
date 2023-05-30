@@ -49,7 +49,7 @@ public class EventDealer : MonoBehaviour
         _swipeableView.UpdateData(data);
     }
 
-    public static void SwapOrFillArray(UISwipeableCardBasic card)
+    public static void SwapOrFillActiveCardsPool(UISwipeableCardBasic card)
     {
         if (instance._activeCardsPool[0] == null && instance._activeCardsPool[1] == null)
         {
