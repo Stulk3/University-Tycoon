@@ -33,9 +33,11 @@ public class University : MonoBehaviour
 
 
     [Header("Indirect Fields")]
-    [SerializeField] private int _maxStudents;
+    [SerializeField] private int _maxStudents = 100;
     [SerializeField] private int _buildingsCount;
 
+
+    public static int MaxStudents => instance._maxStudents;
     private void Awake()
     {
         if (instance == null)
@@ -50,6 +52,8 @@ public class University : MonoBehaviour
         onCorruptionChanged?.Invoke(_corruption);
         onReputationChanged?.Invoke(_reputation);
         onStudentsChanged?.Invoke(_students);
+
+        onMaxStudentsChanged?.Invoke(_maxStudents);
     }
     public void SetMoney(int money)
     {

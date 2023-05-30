@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UserInterface : MonoBehaviour
 {
@@ -11,7 +12,13 @@ public class UserInterface : MonoBehaviour
     [Header("Indicators")]
     [SerializeField] private TMP_Text _moneyIndicator;
     [SerializeField] private TMP_Text _incomeIndicator;
-    
+
+    [SerializeField] private TMP_Text _studentsIndicator;
+    [SerializeField] private Slider _studentsSlider;
+
+    [SerializeField] private TMP_Text _corruptionIndicator;
+    [SerializeField] private Slider _corruptionSlider;
+
     [Space(5f)]
     [Header("Previews")]
     [SerializeField] private TextMeshProUGUI _corruptionPreview;
@@ -115,7 +122,11 @@ public class UserInterface : MonoBehaviour
 
     private void UpdateCorruptionValue(int value)
     {
-       
+        _corruptionIndicator.text = value.ToString() + "%";
+        if (value <= 100)
+        {
+            _corruptionSlider.value = value;
+        }
     }
     private void UpdateReputationValue(int value)
     {
@@ -123,6 +134,12 @@ public class UserInterface : MonoBehaviour
     }
     private void UpdateStudentsValue(int value)
     {
+        _studentsIndicator.text = value.ToString() + "/" + University.MaxStudents.ToString();
+        _studentsSlider.maxValue = University.MaxStudents;
+        if(value <= University.MaxStudents)
+        {
+            _studentsSlider.value = value;
+        }
         
     }
     public void SelectDocumentsSection()

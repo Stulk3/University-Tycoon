@@ -9,6 +9,11 @@ public class EventDealer : MonoBehaviour
 {
     public static EventDealer instance;
 
+    private static bool _isPrologueComplete;
+
+    [SerializeField] private EventCardData[] _prologuePool;
+
+
     [SerializeField] private UISwipeableViewBasic _swipeableView = default;
 
     [SerializeField] private UISwipeableCardBasic[] _activeCardsPool; 
