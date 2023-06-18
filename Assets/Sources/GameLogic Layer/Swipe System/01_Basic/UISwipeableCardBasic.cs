@@ -21,6 +21,8 @@ namespace SwipeableView
         [SerializeField] private TextMeshProUGUI _studentsPreview;
         [SerializeField] private TextMeshProUGUI _moneyPreview;
         [SerializeField] private TextMeshProUGUI _incomePreview;
+
+        [SerializeField] private TextMeshProUGUI _quotePreview;
         private void Start()
         {
             SetPreviews();
@@ -32,10 +34,12 @@ namespace SwipeableView
             _studentsPreview = UserInterface.ReputationPreview;
             _moneyPreview = UserInterface.MoneyPreview;
             _incomePreview = UserInterface.IncomePreview;
+            _quotePreview = UserInterface.QuotePreview;
         }
         public override void UpdateContent(BasicCardData data)
         {
             _background.color = data.color;
+            _eventCard.SetEventCardData(data.eventCard);
 
             _imageLeft.alpha = 0;
             _imageRight.alpha = 0;
@@ -45,7 +49,8 @@ namespace SwipeableView
         {
             _imageLeft.alpha = rate;
             _imageRight.alpha = 0;
-            
+
+            PreviewEventCardQuotes(EventDirection.Right, rate);
             PreviewEventCardImpacts(EventDirection.Right, rate);
         }
         protected override void SwipingLeft(float rate)
@@ -53,6 +58,7 @@ namespace SwipeableView
             _imageRight.alpha = rate;
             _imageLeft.alpha = 0;
 
+            PreviewEventCardQuotes(EventDirection.Left, rate);
             PreviewEventCardImpacts(EventDirection.Left, rate);
         }
         protected override void OnLeftSwipeEnded()
@@ -71,6 +77,7 @@ namespace SwipeableView
 
             EventDealer.SwapOrFillActiveCardsPool(this);
         }
+
         private void PreviewEventCardImpacts(EventDirection eventDirection, float rate)
         {
             
@@ -79,8 +86,8 @@ namespace SwipeableView
                 var value = _eventCard.GetEventCorruptionImpact(eventDirection);
                 if (value > 0)
                 {
-                    _corruptionPreview.text = "+" + value.ToString() + "K";
-                    _corruptionPreview.color = new Color32(0, 180, 0, 255);
+                    _corruptionPreview.text = "+" + value.ToString() + "%";
+                    _corruptionPreview.color = new Color32(180, 0, 0, 255);
                     _corruptionPreview.alpha = rate;
                 }
                 else if (value == 0)
@@ -89,8 +96,8 @@ namespace SwipeableView
                 }
                 else if (value < 0)
                 {
-                    _corruptionPreview.text = value.ToString() + "K";
-                    _corruptionPreview.color = new Color32(180, 0, 0, 255);
+                    _corruptionPreview.text = value.ToString() + "%";
+                    _corruptionPreview.color = new Color32(0, 180, 0, 255);
                     _corruptionPreview.alpha = rate;
                 }
             }
@@ -99,7 +106,7 @@ namespace SwipeableView
                 var value = _eventCard.GetEventStudentsImpact(eventDirection);
                 if (value > 0)
                 {
-                    _studentsPreview.text = "+" + value.ToString() + "K";
+                    _studentsPreview.text = "+" + value.ToString();
                     _studentsPreview.color = new Color32(0, 180, 0, 255);
                     _studentsPreview.alpha = rate;
                 }
@@ -109,7 +116,7 @@ namespace SwipeableView
                 }
                 else if (value < 0)
                 {
-                    _studentsPreview.text = value.ToString() + "K";
+                    _studentsPreview.text = value.ToString();
                     _studentsPreview.color = new Color32(180, 0, 0, 255);
                     _studentsPreview.alpha = rate;
                 }
@@ -157,6 +164,15 @@ namespace SwipeableView
                 }
             }
         }
+        private void PreviewEventCardQuotes(EventDirection eventDirection, float rate)
+        {
 
+            if (_quotePreview != null && EventDealer.ActiveCardsPool[0] == this)
+            {
+                string value = _eventCard.GetEventQuote(eventDirection);
+                _quotePreview.text = value;
+                _quotePreview.alpha = rate;
+            }
+        }
     }
 }

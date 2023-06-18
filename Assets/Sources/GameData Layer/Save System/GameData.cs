@@ -8,4 +8,6 @@ public class GameData
     public int corruption;
     public int reputation;
     public int students;
+
+    public bool isCompletePrologue;
 }

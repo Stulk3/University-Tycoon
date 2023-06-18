@@ -9,9 +9,11 @@ public class EventDealer : MonoBehaviour
 {
     public static EventDealer instance;
 
-    private static bool _isPrologueComplete;
+    private bool _isPrologueComplete;
+    public bool isPrologueComplete => instance._isPrologueComplete;
 
     [SerializeField] private EventCardData[] _prologuePool;
+    [SerializeField] private int prologueCardIndex = 0;
 
 
     [SerializeField] private UISwipeableViewBasic _swipeableView = default;
@@ -38,20 +40,40 @@ public class EventDealer : MonoBehaviour
         instance = this;
         _activeCardsPool = new UISwipeableCardBasic[2] { null, null };
     }
-    private void Update()
-    {
-        Debug.Log(StaticData.EventCardsCount);
-    }
     private void Start()
     {
-        var data = Enumerable.Range(0, 20)
-        .Select(i => new BasicCardData
+        if (isPrologueComplete)
         {
-            color = new Color(Random.value, Random.value, Random.value, 1.0f)
-        })
-        .ToList();
+            var data = Enumerable.Range(0, 5)
+            .Select(i => new BasicCardData
+            {
+                color = new Color(Random.value, Random.value, Random.value, 1.0f)
+            })
+            .ToList();
 
-        _swipeableView.UpdateData(data);
+            _swipeableView.UpdateData(data);
+        }
+        else
+        {
+
+            var data = Enumerable.Range(0, 5)
+            .Select(i => new BasicCardData
+            {
+                color = new Color(Random.value, Random.value, Random.value, 1.0f),
+                eventCard = FillEventCard(_prologuePool)
+            })
+            .ToList();
+
+            _swipeableView.UpdateData(data);
+
+            SwapOrFillActiveCardsPool(_activeCardsPool[1]);
+        }
+        
+    }
+    private EventCardData FillEventCard(EventCardData[] cards)
+    {
+        prologueCardIndex++;
+        return cards[prologueCardIndex-1];
     }
 
     public static void SwapOrFillActiveCardsPool(UISwipeableCardBasic card)

@@ -22,6 +22,7 @@ public class SaveGame : MonoBehaviour
         gameData.corruption = University.Corruption;
         gameData.reputation = University.Reputation;
         gameData.students = University.Students;
+        gameData.isCompletePrologue = EventDealer.instance.isPrologueComplete;
 
         string dataAsJson = JsonUtility.ToJson(gameData);
         string filePath = Application.persistentDataPath + "/gameData.json";

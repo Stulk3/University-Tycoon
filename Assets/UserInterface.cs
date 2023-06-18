@@ -25,10 +25,13 @@ public class UserInterface : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _studentsPreview;
     [SerializeField] private TextMeshProUGUI _moneyPreview;
     [SerializeField] private TextMeshProUGUI _incomePreview;
+
+    [SerializeField] private TextMeshProUGUI _quotePreview;
     public static TextMeshProUGUI CorruptionPreview => instance._corruptionPreview;
     public static TextMeshProUGUI ReputationPreview => instance._studentsPreview;
     public static TextMeshProUGUI MoneyPreview => instance._moneyPreview;
     public static TextMeshProUGUI IncomePreview => instance._incomePreview;
+    public static TextMeshProUGUI QuotePreview => instance._quotePreview;
 
     [Space(5f)]
     [Header("Selectors")]
@@ -99,7 +102,21 @@ public class UserInterface : MonoBehaviour
 
     private void UpdateMoneyValue(int value)
     {
-        _moneyIndicator.text = value.ToString() + "K";
+        if (value > 0)
+        {
+            _moneyIndicator.text = "+" + value.ToString() + "K";
+            _moneyIndicator.color = new Color32(0, 180, 0, 255);
+        }
+        else if (value == 0)
+        {
+            _moneyIndicator.text = value.ToString() + "K";
+            _moneyIndicator.color = Color.yellow;
+        }
+        else if (value < 0)
+        {
+            _moneyIndicator.text = value.ToString() + "K";
+            _moneyIndicator.color = new Color32(180, 0, 0, 255);
+        }
     }
     private void UpdateIncomeValue(int value)
     {

@@ -13,7 +13,7 @@ namespace SwipeableView
         private EventCardData _eventCardData;
         [SerializeField]
         private TMP_Text _title;
-        
+
         [SerializeField]
         private TMP_Text _description;
 
@@ -32,10 +32,10 @@ namespace SwipeableView
             if (_eventCardData)
             {
                 ExctractDataFromEventCardData();
-            }   
+            }
         }
         private Coroutine typeRoutine = null;
-        
+
 
         void PlayStringLine(string message)
         {
@@ -46,7 +46,7 @@ namespace SwipeableView
         }
         public void ActivateCardEvent(EventDirection direction)
         {
-            if(direction == EventDirection.Right || direction == EventDirection.LeftAndRight)
+            if (direction == EventDirection.Right || direction == EventDirection.LeftAndRight)
             {
                 University.instance.MakeImpact(_eventCardData.RightCardEvent);
             }
@@ -59,6 +59,7 @@ namespace SwipeableView
         public void SetEventCardData(EventCardData data)
         {
             _eventCardData = data;
+            ExctractDataFromEventCardData();
         }
         public void ExctractDataFromEventCardData()
         {
@@ -82,13 +83,13 @@ namespace SwipeableView
         {
             _description.text = cardData.Description;
         }
-        
+
         private void ExctractKeywords(EventCardData cardData)
         {
             _dialogueVertexAnimator = new DialogueVertexAnimator(_keyWords, null);
             if (cardData.keyWords != null)
             {
-                if(cardData.keyWords.Length == 1)
+                if (cardData.keyWords.Length == 1)
                 {
                     PaintKeyword(cardData.keyWords[0]);
                     PlayStringLine(cardData.keyWords[0].Title);
@@ -102,8 +103,16 @@ namespace SwipeableView
         }
         private void PaintKeyword(KeyWord keyWord)
         {
-            
 
+
+        }
+        public string GetEventQuote(EventDirection eventDirection)
+        {
+            if (_eventCardData.GetEventByDirection(eventDirection) != null)
+            {
+                return _eventCardData.GetEventByDirection(eventDirection).Quote;
+            }
+            return null;
         }
         public int GetEventMoneyImpact(EventDirection eventDirection)
         {
