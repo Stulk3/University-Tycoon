@@ -93,6 +93,20 @@ public class EventDealer : MonoBehaviour
             instance._activeCardsPool[1] = temp;
         }
     }
+    public void ShuffleEventCardsPool()
+    {
+        _eventCardsPool = _eventCardsPool.OrderBy(x => Random.value).ToArray();
+    }
+    public void AddToEventCardsPoolByKeyword(string keyword)
+    {
+        var cardsToAdd = _eventCards.Where(card => card.keyWords.Any(kw => kw.Equals(keyword))).ToArray();
+        _eventCardsPool = _eventCardsPool.Concat(cardsToAdd).ToArray();
+    }
+
+    public void RemoveFromEventCardsPoolByQuest(string quest)
+    {
+        _eventCardsPool = _eventCardsPool.Where(card => !card.quest.Equals(quest)).ToArray();
+    }
     public void GenerateCardPool(ICard[] cards)
     {
 
