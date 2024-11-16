@@ -34,6 +34,7 @@ public class University : MonoBehaviour
 
     [Header("Indirect Fields")]
     [SerializeField] private int _maxStudents = 100;
+    [SerializeField] private int _maxIncome = 1000;
     [SerializeField] private int _buildingsCount;
 
 
@@ -83,26 +84,47 @@ public class University : MonoBehaviour
     {
         if(data != null)
         {
-            _money += data.MoneyImpact;
-            onMoneyChanged?.Invoke(_money);
 
-            _income += data.IncomeImpact;
-            onIncomeChanged?.Invoke(_income);
+            ImpactMoney(data.MoneyImpact);
 
-            _corruption += data.CorruptionImpact;
-            onCorruptionChanged?.Invoke(_corruption);
+            ImpactIncome(data.IncomeImpact);
 
-            _reputation += data.ReputationImpact;
-            onReputationChanged?.Invoke(_reputation);
+            ImpactCorruption(data.CorruptionImpact);
 
-            _students += data.StudentsImpact;
-            onStudentsChanged?.Invoke(_students);
+            ImpactReputation(data.ReputationImpact);
+
+            ImpactStudents(data.StudentsImpact);
         }
 
     }
-    public void GetIncome()
+    public void AddIncome()
     {
         _money += _income;
         onMoneyChanged?.Invoke(_money);
+    }
+    private void ImpactMoney(int money)
+    {
+        _money += money;
+        onMoneyChanged?.Invoke(_money);
+    }
+    private void ImpactIncome(int income)
+    {
+        _income += income;
+        onIncomeChanged?.Invoke(_income);
+    }
+    private void ImpactCorruption(int corruption)
+    {
+        _corruption += corruption;
+        onCorruptionChanged?.Invoke(_corruption);
+    }
+    private void ImpactReputation(int reputation)
+    {
+        _reputation += reputation;
+        onReputationChanged?.Invoke(_reputation);
+    }
+    private void ImpactStudents(int students)
+    {
+        _students += students;
+        onStudentsChanged?.Invoke(_students);
     }
 }

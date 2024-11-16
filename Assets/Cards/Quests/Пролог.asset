@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _title: "\u041F\u0440\u043E\u043B\u043E\u0433"
   _color: {r: 0.27095047, g: 0.8113208, b: 0.57298553, a: 1}
-  _cards: []
+  _cards:
+  - {fileID: 11400000, guid: 5d037e418d714704e91ad97c0f791f04, type: 2}
+  - {fileID: 11400000, guid: 75e944350e977b24cbe0dd0b8f285c7a, type: 2}
+  - {fileID: 11400000, guid: f6c16457d7771a74fa501d0954005932, type: 2}
+  - {fileID: 11400000, guid: 5d14960833c5ab544921674cd721b02f, type: 2}
+  - {fileID: 11400000, guid: 432e5247d72f3f446bfe1df1edcef258, type: 2}
   _achievement: {fileID: 11400000, guid: 40865e2d05a42b3438918b987395522c, type: 2}

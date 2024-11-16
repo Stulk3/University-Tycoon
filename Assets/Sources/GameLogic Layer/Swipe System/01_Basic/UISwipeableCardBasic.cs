@@ -65,7 +65,7 @@ namespace SwipeableView
         {
             _eventCard.ActivateCardEvent(EventDirection.Left);
 
-            University.instance.GetIncome();
+            University.instance.AddIncome();
 
             EventDealer.SwapOrFillActiveCardsPool(this);
         }
@@ -73,7 +73,7 @@ namespace SwipeableView
         {
             _eventCard.ActivateCardEvent(EventDirection.Right);
 
-            University.instance.GetIncome();
+            University.instance.AddIncome();
 
             EventDealer.SwapOrFillActiveCardsPool(this);
         }
